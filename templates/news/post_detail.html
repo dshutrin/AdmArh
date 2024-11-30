@@ -35,6 +35,11 @@
         <h2 class="st">Заголовок:</h2>
         <span class="post-title">{{ post.title }}</span>
 
+        {% if post.category %}
+            <h2 class="st">Категория:</h2>
+            <span class="post-title">{{ post.category }}</span>
+        {% endif %}
+
         {% if post.file %}
             <h2 class="st">Файл:</h2>
             <a class="file-load" href="/load_file/{{ post.id }}" target="_blank">Открыть</a>

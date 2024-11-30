@@ -43,7 +43,7 @@
         <div class="content">
             {% for post in posts %}
                 <div class="post">
-                    <span class="date-name">#{{ post.id }} &#160 &#160 {{ post.pub_date }} &#160 &#160 {{ post.author }}</span>
+                    <span class="date-name">#{{ post.id }} &#160 &#160 {{ post.pub_date }} &#160 &#160 {{ post.author }} {% if post.category %} &#160 &#160 {{ post.category }} {% endif %} </span>
                     <h4 class="data">{{ post.title }}</h4>
                     <a class="loader" href="/admin_panel/post/{{ post.id }}">Перейти</a>
                 </div>

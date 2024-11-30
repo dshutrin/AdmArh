@@ -8,6 +8,13 @@ form {
     flex-direction: column;
 }
 
+select {
+    font-size: 18px;
+    padding: 0.2rem 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
 input[type="file"] {
     display: none;
 }

@@ -17,7 +17,7 @@ def home(request):
 		posts = Post.objects.all().order_by('-id')
 		data = request.POST.get('search-data')
 		if data:
-			posts = [x for x in posts if data.lower() in x.title.lower() or data == str(x.id)]
+			posts = [x for x in posts if data.lower() in x.title.lower() or data == str(x.id) or data.lower() in str(x.category).lower()]
 
 	return render(request, 'news/home.html', {
 		'posts': posts
@@ -35,7 +35,7 @@ def admin_panel(request):
 			posts = Post.objects.all().order_by('-id')
 			data = request.POST.get('search-data')
 			if data:
-				posts = [x for x in posts if data.lower() in x.title.lower() or data == str(x.id)]
+				posts = [x for x in posts if data.lower() in x.title.lower() or data == str(x.id) or data.lower() in str(x.category).lower()]
 
 		return render(request, 'news/admin_panel.html', {
 			'posts': posts
@@ -145,6 +145,7 @@ def add_post(request):
 
 			form = EditPostForm(request.POST, request.FILES)
 			if form.is_valid():
+
 				post = form.save(commit=False)
 				post.author = f'{request.user.first_name} {request.user.last_name}'
 				post.save()
