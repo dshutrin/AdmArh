@@ -1,0 +1,65 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
+    <style>
+        @font-face {
+            font-family: Roboto;
+            src: url("{% static 'fonts/Roboto-Regular.ttf' %}");
+        }
+
+        * {
+            font-family: Roboto;
+        }
+    </style>
+    <title>Пост #{{ post.id }}</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1 class="title">Данные поста #{{ post.id }} от {{ post.pub_date }}</h1>
+        <a href="/admin_panel/post/{{ post.id }}/edit" class="file-load">Изменить пост</a>
+        <button
+                type="button"
+                style="background-color: indianred; border: 2px solid indianred; cursor: pointer;"
+                onclick="document.getElementById('rm-modal').style.top = '20vh';"
+                class="file-load"
+        >Удалить пост</button>
+
+        <h2 class="st">Заголовок:</h2>
+        <span class="post-title">{{ post.title }}</span>
+
+        {% if post.file %}
+            <h2 class="st">Файл:</h2>
+            <a class="file-load" href="/load_file/{{ post.id }}" target="_blank">Открыть</a>
+        {% else %}
+
+        {% endif %}
+
+        <h2 class="st">Автор:</h2>
+        <span class="author">{{ post.author }}</span>
+
+        <div style="margin: 5rem 0;">
+            <a style="" href="/admin_panel" class="st file-load">Вернуться в панель администратора</a>
+        </div>
+
+    </div>
+
+    <div id="rm-modal">
+        <h1>Вы действительно хотите удалить этот пост?</h1>
+
+        <div class="modal-actions">
+            <button onclick="document.getElementById('rm-modal').style.top = '-100vh';">Нет, оставить пост</button>
+            <a href="/admin_panel/post/{{ post.id }}/delete" >Удалить</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

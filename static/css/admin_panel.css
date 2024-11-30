@@ -1,0 +1,256 @@
+@media (width > 500px) {
+
+    #ub {
+        position: fixed;
+        top: 2rem;
+    }
+
+    #logout {
+        position: fixed;
+        right: 2rem;
+
+        background-color: black;
+        color: white;
+        border-radius: 0.75rem;
+        padding: 0.3rem 1rem;
+        text-decoration: none;
+
+        transition: all 0.2s ease-in-out;
+    }
+
+    #username {
+        position: fixed;
+        display: inline;
+        right: 2rem;
+        z-index: 1000;
+        top: 2rem;
+
+        background-color: black;
+        color: white;
+        border-radius: 0.75rem;
+        padding: 0.3rem 1rem;
+        text-decoration: none;
+    }
+
+    .logout-show {
+        top: 5rem;
+    }
+
+    .logout-hiden {
+        top: 2rem;
+    }
+
+
+
+
+
+
+    body {
+        margin-left: 20vw;
+    }
+
+    .container {
+        width: 60vw;
+    }
+
+    .content {
+        margin-bottom: 1rem;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .navbar {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 2px solid lightgray;
+        align-content: center;
+        justify-items: center;
+    }
+
+    .navbar > img {
+        height: 50px;
+    }
+
+    .navbar > input {
+        font-size: 20px;
+        text-align: center;
+        outline: none;
+        border: none;
+        padding: 0.3rem 1rem;
+        width: calc(90% - 2rem);
+    }
+
+    .navbar > button {
+        font-size: 20px;
+        outline: none;
+        border-radius: 0.5rem;
+        padding: 0.3rem 1rem;
+        width: calc(90% - 2rem);
+        border: none;
+        cursor: pointer;
+        background-color: inherit;
+        color: black;
+    }
+
+    .navbar > button:hover {
+        background-color: lightgray;
+    }
+
+    .post {
+        margin: 1rem;
+        width: calc(100% - 4rem);
+        padding: 1rem;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+    }
+
+    .date-name {
+        display: block;
+        color: gray;
+        width: 100%;
+        font-size: 14px;
+        border-bottom: 1px solid lightgray;
+    }
+
+    .data {
+        margin: 1rem 0;
+    }
+
+    .loader {
+        text-decoration: none;
+        font-weight: 600;
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        color: #2aa7d3;
+        text-align: end;
+    }
+}
+
+@media (width <= 500px) {
+
+    #ub {
+        position: fixed;
+        bottom: 2rem;
+    }
+
+    #logout {
+        position: fixed;
+        left: 2rem;
+        
+        background-color: black;
+        color: white;
+        border-radius: 0.75rem;
+        padding: 0.3rem 1rem;
+        text-decoration: none;
+
+        transition: all 0.2s ease-in-out;
+    }
+
+    #username {
+        position: sticky;
+        display: inline;
+        left: 2rem;
+        z-index: 1000;
+        bottom: 2rem;
+
+        background-color: black;
+        color: white;
+        border-radius: 0.75rem;
+        padding: 0.3rem 1rem;
+        text-decoration: none;
+    }
+
+    .logout-show {
+        bottom: 5rem;
+    }
+
+    .logout-hiden {
+        bottom: 2rem;
+    }
+
+    body {
+        margin-left: 5vw;
+    }
+
+    .container {
+        width: 90vw;
+    }
+
+    .content {
+        margin-bottom: 1rem;
+    }
+
+    .navbar {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 2px solid lightgray;
+        align-content: center;
+        justify-items: center;
+    }
+
+    .navbar > img {
+        height: 50px;
+    }
+
+    .navbar > input {
+        font-size: 20px;
+        text-align: center;
+        outline: none;
+        border: none;
+        padding: 0.3rem 1rem;
+        width: calc(90% - 2rem);
+    }
+
+    .navbar > button {
+        font-size: 20px;
+        outline: none;
+        border-radius: 0.5rem;
+        padding: 0.3rem 1rem;
+        width: calc(90% - 2rem);
+        border: none;
+        cursor: pointer;
+        background-color: inherit;
+        color: black;
+    }
+
+    .navbar > button:hover {
+        background-color: lightgray;
+    }
+
+    .post {
+        margin-top: 1rem;
+        width: calc(100% - 2rem);
+        padding: 1rem;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+    }
+
+    .date-name {
+        display: block;
+        color: gray;
+        width: 100%;
+        font-size: 14px;
+        border-bottom: 1px solid lightgray;
+    }
+
+    .data {
+        margin: 1rem 0;
+    }
+
+    .loader {
+        text-decoration: none;
+        font-weight: 600;
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        color: #2aa7d3;
+        text-align: end;
+    }
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
+    <style>
+        @font-face {
+            font-family: Roboto;
+            src: url("{% static 'fonts/Roboto-Regular.ttf' %}");
+        }
+
+        * {
+            font-family: Roboto;
+        }
+    </style>
+    <title>Пост #{{ post.id }}</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1 class="title">Изменение поста #{{ post.id }} от {{ post.pub_date }}</h1>
+
+        <form method="post" enctype="multipart/form-data">
+
+            {% for f in form %}
+
+                {% if f.label == 'Файл (не обязательно)' %}
+                    <label id="l_{{ f.id_for_label }}" for="{{ f.id_for_label }}">
+                        {% if post.file %}
+                            {{ post.file.name }}
+                        {% else %}
+                            {{ f.label }}
+                        {% endif %}
+                    </label>
+                    {% if post.file %}
+                        <div class="lfile">
+                            {{ f }}
+                        </div>
+                    {% else %}
+                        {{ f }}
+                    {% endif %}
+
+                {% else %}
+                    <label id="l_{{ f.id_for_label }}" for="{{ f.id_for_label }}">{{ f.label }}</label>
+                    {{ f }}
+                {% endif %}
+
+            {% endfor %}
+
+            {% csrf_token %}
+            <div class="button-block">
+                <button class="file-load" type="submit">Сохранить изменения</button>
+            </div>
+        </form>
+
+        <div style="margin: 5rem 0;">
+            <a style="" href="/admin_panel/post/{{ post.id }}" class="st file-load">Вернуться к посту</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

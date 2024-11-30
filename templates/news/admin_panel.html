@@ -1,0 +1,75 @@
+<!doctype html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="{% static 'imgs/logo.ico' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+    <style>
+        @font-face {
+            font-family: Roboto;
+            src: url("{% static 'fonts/Roboto-Regular.ttf' %}");
+        }
+
+        * {
+            font-family: Roboto;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/admin_panel.css' %}">
+    <title>Администрация Архаринского округа</title>
+</head>
+<body>
+
+    <div class="container">
+        <h2 style="text-align: center; margin-top: 1rem;">Панель администратора</h2>
+        <div style="text-align: center; display: flex; justify-content: center;">
+            <a style="text-align: center; display: block; text-decoration: none; background-color: black; color: white; border-radius: 1rem; padding: 0.3rem 3rem; margin: 1rem;" href="/">Вернуться на сайт</a>
+            <a style="text-align: center; display: block; text-decoration: none; background-color: black; color: white; border-radius: 1rem; padding: 0.3rem 3rem; margin: 1rem;" href="/admin_panel/post/add">Добавить пост</a>
+        </div>
+        <form method="post" class="navbar">
+            <img src="{% static 'imgs/logo.png' %}" alt="Логотип">
+            <input type="text" name="search-data" placeholder="Поиск">
+
+            {% csrf_token %}
+            <button class="find" type="submit">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+            </button>
+        </form>
+        <div class="content">
+            {% for post in posts %}
+                <div class="post">
+                    <span class="date-name">#{{ post.id }} &#160 &#160 {{ post.pub_date }} &#160 &#160 {{ post.author }}</span>
+                    <h4 class="data">{{ post.title }}</h4>
+                    <a class="loader" href="/admin_panel/post/{{ post.id }}">Перейти</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div id="ub">
+        <button id="username" style="top: 2rem; cursor: pointer;" type="button" onclick="sh_logout()">{{ user.first_name }} {{ user.last_name }}</button>
+        <a id="logout" class="logout-hiden" href="/logout">Выйти</a>
+    </div>
+
+    <script>
+        function sh_logout() {
+			let lg = document.getElementById('logout')
+
+            if (lg.classList.contains('logout-hiden')) {
+				lg.classList.remove('logout-hiden')
+                lg.classList.add('logout-show')
+            } else {
+                lg.classList.remove('logout-show')
+                lg.classList.add('logout-hiden')
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
+    <style>
+        @font-face {
+            font-family: Roboto;
+            src: url("{% static 'fonts/Roboto-Regular.ttf' %}");
+        }
+
+        * {
+            font-family: Roboto;
+        }
+    </style>
+    <title>Авторизация</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1 style="text-align: center" class="title">Авторизация</h1>
+
+        <form id="log-form" method="post">
+
+            <label for="log">Имя пользователя</label>
+            <input id="log" type="text" name="username" placeholder="Имя пользователя">
+
+            <label for="pas">Пароль</label>
+            <input id="pas" type="password" name="password" placeholder="Пароль">
+
+            {% csrf_token %}
+            <div class="button-block">
+                <button style="cursor: pointer" class="file-load" type="submit">Войти</button>
+            </div>
+        </form>
+
+        <div style="margin: 5rem 0;">
+            <a style="" href="/" class="st file-load">Вернуться на сайт</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
