@@ -12,4 +12,5 @@ urlpatterns = [
     path('load_file/<int:pid>', load_file),
     path('login', login_view),
     path('logout', logout_view),
+    path('about', about)
 ]

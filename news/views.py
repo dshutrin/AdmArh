@@ -177,3 +177,7 @@ def login_view(request):
 def logout_view(request):
 	user_logout(request)
 	return HttpResponseRedirect('/')
+
+
+def about(request):
+	return render(request, 'news/about.html')

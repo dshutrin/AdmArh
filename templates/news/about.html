@@ -1,0 +1,93 @@
+<!doctype html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Администрация Архаринского округа">
+    <link rel="icon" href="{% static 'imgs/logo.ico' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_name=search" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_name=home" />
+    <style>
+        @font-face {
+            font-family: Roboto;
+            src: url("{% static 'fonts/Roboto-Regular.ttf' %}");
+        }
+
+        * {
+            font-family: Roboto;
+        }
+
+        @media (width <= 500px) {
+            .smi-info {
+                display: flex;
+                flex-direction: column;
+                margin-top: 2rem;
+                gap: 1rem;
+            }
+        }
+
+        @media (width > 500px) {
+            .smi-info {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                margin-top: 2rem;
+                gap: 1rem;
+            }
+
+            .right {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .rsp {
+                margin-bottom: 7px;
+            }
+        }
+
+    </style>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>Официальный вестник Архаринского муниципального округа</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="rkn-title">
+            <h1>Официальный вестник Архаринского муниципального округа</h1>
+        </div>
+        <div class="content">
+            <div class="smi-info">
+                <div class="left">
+                    <h3 style="text-align: center;">
+                        Официальное опубликование нормативно-правовых актов органов местного самоуправления
+                        Архаринского муниципального округа, о назначении и результатах публичных слушаний,
+                        проводимых органами местного самоуправления Архаринского муниципального округа,
+                        общественные обсуждения.
+                    </h3>
+                </div>
+                <div class="right" style="text-align: center; font-weight: 600;">
+                    <span class="rsp">Наименование СМИ: Официальный вестник Архаринского муниципального округа</span>
+                    <span class="rsp">Учредитель: Администрация Архаринского муниципального округа</span>
+                    <span class="rsp">Главный редактор: Колядюк И.В.</span>
+                    <span class="rsp">Адрес электронной почты: arhara-adm@mail.ru</span>
+                    <span class="rsp">Номер телефона редакции: 89244438384</span>
+                    <span class="rsp">Сетевое издание зарегистрировано</span>
+                    <span class="rsp">Роскомнадзором 05 сентября 2024 года</span>
+                    <span class="rsp">запись о регистрации СМИ ЭЛ № ФС 77 – 88202</span>
+                    <span class="rsp">12+</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <a id="info-banner" href="/" class="material-symbols-outlined">
+        home
+    </a>
+
+
+</body>
+</html>

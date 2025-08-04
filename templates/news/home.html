@@ -8,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Администрация Архаринского округа">
     <link rel="icon" href="{% static 'imgs/logo.ico' %}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_name=search" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_name=sticky_note_2" />
     <style>
         @font-face {
             font-family: Roboto;
@@ -20,11 +21,14 @@
         }
     </style>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <title>Администрация Архаринского округа</title>
+    <title>Официальный вестник Архаринского муниципального округа</title>
 </head>
 <body>
 
     <div class="container">
+        <div class="rkn-title">
+            <h1>Официальный вестник Архаринского муниципального округа</h1>
+        </div>
         <form method="post" class="navbar">
             <img src="{% static 'imgs/logo.png' %}" alt="Логотип">
             <input type="text" name="search-data" placeholder="Поиск">
@@ -48,6 +52,12 @@
             {% endfor %}
         </div>
     </div>
+
+
+    <a id="info-banner" href="/about" class="material-symbols-outlined">
+        sticky_note_2
+    </a>
+
 
 </body>
 </html>
